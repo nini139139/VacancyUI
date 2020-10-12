@@ -1,0 +1,13 @@
+h3, .btn{
+    display: inline-block;
+    width: 120px;
+}
+
+.CompanyList{
+    margin-top: 10px;;
+}
+.item{
+    margin-right: 35px;
+    display: inline-block;
+    width: 86px;
+}

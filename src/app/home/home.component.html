@@ -1,0 +1,23 @@
+
+<div *ngIf="(accountService.currentUser$ | async)===null">
+<div class="container">
+    <hr>
+    <div *ngIf="!registerMode" class="registration" style="text-align:center">
+    <h1>მომხმარებლის რეგისტრაცია</h1>
+    <p class="lead">მომხმარებლის დასარეგისტრირებლად დააჭირეთ რეგისტრაცია ღილაკს</p>
+    <div class="text-center">
+        <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2">რეგისტრაცია</button>
+    </div>
+    </div>
+</div>
+
+
+<div *ngIf="registerMode" class="container">
+<div class="row justify-content-center">
+    <div class="col-4">
+        <app-register (cancelRegister)="cancelRegisterMode($event)"> </app-register>
+    </div>
+</div>
+</div>
+
+</div>

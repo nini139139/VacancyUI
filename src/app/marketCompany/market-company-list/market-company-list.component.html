@@ -1,0 +1,42 @@
+<app-market-company-registration  (updateMarketCompanyData)="updateMarketCompanyDatat($event)"></app-market-company-registration>
+
+
+
+<div class="marketList" *ngFor="let item of paintList">
+<div>
+    <h3 *ngIf="item.hidden">{{item.companyName}}</h3>
+    <h3 *ngIf="item.hidden">{{item.marketName}}</h3>
+    <h3 *ngIf="item.hidden">{{item.price}}</h3>
+   
+    <div class="form-group item" *ngIf="!item.hidden">
+        <label>კომპანია</label>
+    <select class="form-control" name="companyId"  [(ngModel)]="item.companyId" >
+        <option *ngFor="let company of Companies"
+        ngValue="{{company.id}}"
+        [selected]="company.id==item.companyId"
+        >
+            {{company.companyName}}
+        </option>
+    </select>
+    </div>
+
+    <div class="form-group item" *ngIf="!item.hidden">
+        <label>მარკეტი</label>
+        <select class="form-control" name="marketId"  [(ngModel)]="item.marketId" >
+            <option *ngFor="let market of Marketies"
+            ngValue="{{market.id}}"
+            [selected]="market.id==item.marketId"
+            >
+                {{market.name}}
+            </option>
+        </select>
+        </div>
+    
+        <div class="form-group item" *ngIf="!item.hidden">
+            <label>თანხა</label>
+            <input [(ngModel)]="item.price">
+        </div>
+            <input *ngIf="false" [(ngModel)]="item.id">
+
+    <button class="btn btn-success my-2 my-sm-0" (click)="changeMarketCompanyData(item)" >{{item.btnNmae}}</button>
+</div>

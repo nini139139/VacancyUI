@@ -1,0 +1,11 @@
+
+<app-market-registration  (updateMarketData)="updateMarkets($event)"></app-market-registration>
+
+
+
+<div class="marketList" *ngFor="let item of paintList">
+<div>
+    <h3 *ngIf="item.hidden">{{item.name}}</h3>
+    <input *ngIf="!item.hidden" class="item" [(ngModel)]="item.name">
+    <button class="btn btn-success my-2 my-sm-0" (click)="changeMarketData(item)" >{{item.btnNmae}}</button>
+</div>
