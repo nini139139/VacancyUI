@@ -1,3 +1,4 @@
+//create guard cmd ng g guard auth --skip-tests after run will choose canActive
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';

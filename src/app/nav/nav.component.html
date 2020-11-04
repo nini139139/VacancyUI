@@ -5,6 +5,15 @@
           <ul class="navbar-nav mr-auto">
             <ng-container  *ngIf="accountService.currentUser$ | async">
               <li class="nav-item">
+                <a class="nav-link" routerLink='/members' routerLinkActive='active' >მომხმარებლები</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink='/lists' routerLinkActive='active' >სია</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink='/messages' routerLinkActive='active' >Message</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" routerLink='/markets' routerLinkActive='active' >მარკეტები</a>
               </li>
               <li class="nav-item">

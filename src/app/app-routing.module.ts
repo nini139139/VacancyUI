@@ -21,6 +21,9 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path:'members/:id', component: MemberDetailComponent, canActivate: [AuthGuard]},
+      {path:'members', component: MemberListComponent},
+      {path:'lists', component: ListComponent},
+      {path:'messages', component: MessageComponent},
       {path:'markets', component: MarketListComponent},
       {path:'Companies', component: CompanyListComponent},
       {path:'MarketComapnies', component: MarketCompanyListComponent},
@@ -28,6 +31,8 @@ const routes: Routes = [
     ]
   },
   {path:'errors', component: TestErrorsComponent},
+  //if doesnt matches any url pathmatcth full is checking if url exactly is same.
+  // other case it will stop when will find half part from url
   {path:'**', component: HomeComponent, pathMatch: 'full'},
 ];
 
