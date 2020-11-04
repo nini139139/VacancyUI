@@ -16,9 +16,11 @@
             </ng-container>
           </ul>
 
+          <!-- called currentuser with pipe async -->
           <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
             <a class="dropdown-toggle text-light" dropdownToggle>{{user.userName }}</a>
             <div class="dropdown-menu mt-3" *dropdownMenu> 
+              <a class="nav-link">Edit Profile</a>
               <a class="nav-link" routerLink='/errors'  routerLinkActive='active'>test error cases</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" (click)="logout()">გამოსვლა</a>
@@ -29,6 +31,7 @@
 
 
 
+          <!-- if want to check pipe with null you can't use ! you should compare with null -->
           <form *ngIf="(accountService.currentUser$ | async)===null" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">
             <input 
             name="username"

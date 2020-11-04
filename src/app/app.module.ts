@@ -62,6 +62,7 @@ export function tokenGetter() {
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    BsDropdownModule.forRoot(),
     SharedModule,
     JwtModule.forRoot({
       config: {
@@ -73,6 +74,7 @@ export function tokenGetter() {
     
 
   ],
+  //in old verssion we didn't have this part for services
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],

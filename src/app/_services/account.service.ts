@@ -1,3 +1,6 @@
+//create new service
+//ng g s servicesfilename --skip-test
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
@@ -26,6 +29,10 @@ export class AccountService {
         }
       })
     );
+  }
+
+  getUsers(){
+    return this.http.get(this.baseUrl+ 'Users/getusers');
   }
 
   register(model:any){

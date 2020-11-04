@@ -15,6 +15,7 @@ import { AccountService } from '../_services/account.service';
 export class NavComponent implements OnInit {
 
   model:any={};
+  // if we want to use accountservice in html we should describe as public
   constructor(public accountService: AccountService, private router:Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {

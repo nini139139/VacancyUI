@@ -10,7 +10,6 @@ import { AccountService } from '../_services/account.service';
 })
 export class RegisterComponent implements OnInit {
 
-  // @Input() userFromHomeComponent: any;
   @Output() cancelRegister = new EventEmitter(); 
   model: any = {};
   constructor(private accountService: AccountService, private toastr: ToastrService,  private router:Router) { }
